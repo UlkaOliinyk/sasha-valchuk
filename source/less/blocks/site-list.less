@@ -2,20 +2,22 @@
   list-style: none;
 
   .site-list__item {
-    padding: 20px 0 25px;
+    font-size: 16px;
+    line-height: 18px;
+    padding: 14px 0 16px;
     text-align: center;
     border-top: 1px solid  @color-grey-line;
   }
 
   a {
-    text-decoration: none;
+    text-decoration: none;    //border: 1px solid red;
     color: @text-color;
-    font-weight: 500;
+    font-weight: 400;
   }
 
   .site-list__item--active a {
     border-bottom: 2px solid  @color-main;
-    padding-bottom: 9px;
+    padding-bottom: 5px;
   }
 
   a:hover {
@@ -31,33 +33,42 @@
   .site-list {
     display: flex;
     flex-direction: row;
-    justify-content: flex-end;
-    width: 555px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 708px;
 
     .site-list__item {
-      width: 195px;
-      font-size: 18px;
+      width: 160px;
+      font-size: 16px;
+      line-height: 18px;
       font-weight: 400;
-      text-align: end;
-      padding: 42px 3px 0 10px;
+      text-align: start;
+      white-space: nowrap; //не переносит отдельные слова в меню
+      border-top: none;
+      padding: 20px 3px 0 10px;
     }
 
     .site-list__item--active a {
       border-bottom: 2px solid  @color-main;
-      padding-bottom: 9px;
+      padding-bottom: 5px;
     }
   }
 }
 
 @media (min-width: @desktop-width) {
   .site-list {
-    width: 1040px;
+    width: 1300px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: nowrap;
 
     .site-list__item {
       width: 203px;
-      font-size: 20px;
-      text-align: end;
-      padding: 74px 0 0 0;
+      font-size: 16px;
+      line-height: 18px;
+      text-align: start;
+      padding: 10px 0 0 0;
     }
   }
 
@@ -67,7 +78,7 @@
 
   .site-list--white .site-list__item--active a {
     border-bottom: 2px solid #ffffff;
-    padding-bottom: 9px;
+    padding-bottom: 5px;
   }
 
   .site-list--white .site-list__item a:hover {

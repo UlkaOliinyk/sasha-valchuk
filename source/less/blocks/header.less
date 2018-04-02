@@ -2,19 +2,15 @@
   width: 100%;
   .wrapper;
 
-  .page-header__logo {
+  .page-header__logo { border: 1px solid red;
     display: flex;
     flex-direction: row;
     align-content: center;
-    height: 65px;
+    height: 140px;
   }
 
   .page-header__logo-image {
     margin-top: 10px;
-  }
-
-  .page-header__logo-name {
-    margin-left: 55px;
   }
 
   .page-header__logo:hover {
@@ -30,37 +26,35 @@
   .page-header {
     .page-header__wrapper {
       display: flex;
+      flex-direction: column;
+      align-items: center;
     }
 
     .page-header__logo {
-      height: 100px;
-      width: 175px;
+      height: 140px;
+      width: 200px;
       padding-top: 12px;
     }
 
     .page-header__logo-image {
-      height: 60px;
-      width: 175px;
-    }
-
-    .page-header__logo-name {
-      display: none;
+      height: 103px;
+      width: 200px;
     }
   }
 }
 
 @media (min-width: @desktop-width) {
   .page-header {
-    .page-header__logo {
-      height: 80px;
-      width: 200px;
-      padding-top: 45px;
-      margin-left: 0;
+    .page-header__wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
 
-    .page-header__logo-image {
-      height: 60px;
-      width: 205px;
+    .page-header__logo {
+      height: 140px;
+      width: 200px;
+      margin-left: 0;
     }
   }
 }

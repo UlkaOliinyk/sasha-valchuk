@@ -2,8 +2,8 @@
   position: relative;
   color: @text-color;
   font-family: @font-family;
-  font-size: 20px;
-  line-height: 20px;
+  font-size: 16px;
+  line-height: 18px;
   text-transform: uppercase;
   width: 320px;
   margin-left: -20px;
@@ -96,14 +96,21 @@
   .main-nav--opened .site-list {
     display: block;
   }
-
-  // .main-nav--nojs .main-nav__toggle {
-  //   display: none;
-  // }
 }
 
 @media (min-width: @tablet-width) {
   .main-nav {
-    width: 440px;
+    width: 768px;
+    margin: 0 auto;
+  }
+
+  .main-nav--nojs .main-nav__toggle {
+    display: none;
+  }
+}
+
+@media (min-width: @desktop-width) {
+  .main-nav {
+    width: 1300px;
   }
 }
