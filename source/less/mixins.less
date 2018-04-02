@@ -1,0 +1,26 @@
+.wrapper {
+  &__wrapper {
+    width: 320px;
+    padding: 0 20px;
+    margin: 0 auto;
+    border: 1px solid rgb(0, 17, 255);
+  }
+
+  @media (min-width: @tablet-width) {
+    &__wrapper {
+      width: 768px;
+      padding: 0 30px;
+      margin: 0 auto;
+      border: 1px solid rgb(21, 223, 21);
+    }
+  }
+
+  @media (min-width: @desktop-width) {
+    &__wrapper {
+      width: 1300px;
+      padding: 0 40px;
+      margin: 0 auto;
+      border: 1px solid rgb(202, 45, 202);
+    }
+  }
+}

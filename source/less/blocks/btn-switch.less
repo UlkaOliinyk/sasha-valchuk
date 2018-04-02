@@ -1,0 +1,217 @@
+.btn-switch {
+  position: relative;
+
+  .btn-switch__picture {
+    position: relative;
+    width: 320px;
+    margin-left: -20px;
+  }
+
+  .btn-switch__before,
+  .btn-switch__after {
+    position: absolute;
+    opacity: 0;
+  }
+
+  .btn-switch__controls {
+    position: relative;
+  }
+
+  .btn-switch__label { // белый чекбокс
+    content: "";
+    position: absolute;
+    left: 100px;
+    top: 295px;
+    display: inline-block;
+    width: 85px;
+    height: 14px;
+    border-radius: 50px;
+    border: 1px solid #cfcfcf;
+    background-color: #ffffff;
+    cursor: pointer;
+  }
+
+  .btn-switch__label::before { // зеленый переключатель
+    content: "";
+    position: absolute;
+    left: 4px;
+    top: 3px;
+    display: block;
+    width: 40px;
+    height: 6px;
+    border-radius: 4px;
+    background: @color-main;
+    transition: 0.5s;
+  }
+
+  .btn-switch__radio1:checked ~ .btn-switch__label::before {
+    left: 4px;
+  }
+
+  .btn-switch__radio2:checked ~ .btn-switch__label::before {
+    left: 40px;
+  }
+
+  .btn-switch__radio3:checked ~ .btn-switch__picture > .btn-switch__before,
+  .btn-switch__radio2:checked ~ .btn-switch__picture > .btn-switch__after {
+    opacity: 1;
+  }
+
+  input {
+    //display: none;
+    opacity: 0;
+  }
+
+  .btn-switch__discription {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 272px;
+    padding-bottom: 35px;
+  }
+
+  .btn-switch__txt {
+    font-family: @font-family;
+    font-size: 16px;
+    line-height: 20px;
+    text-transform: uppercase;
+    display: block;
+    padding: 0 40px;
+  }
+}
+
+@media (min-width: @tablet-width) {
+  .btn-switch {
+    position: relative;
+
+    .btn-switch__picture {
+      position: relative;
+      width: 690px;
+      height: 517px;
+      margin-top: 60px;
+      margin-left: 10px;
+    }
+
+    .btn-switch__label {        //серая полоса прокрутки
+      left: 140px;
+      top: 618px;
+      width: 430px;
+      height: 8px;
+      border-radius: 5px;
+      background-color: #cfcfcf;
+    }
+
+    .btn-switch__label::before { // белый переключатель-кружок
+      left: 304px;
+      top: -14px;
+      width: 33px;
+      height: 33px;
+      border-radius: 50%;
+      background: #ffffff;
+      border: 1px solid #cfcfcf;
+      transition: 0.5s;
+    }
+
+    .btn-switch__label::after { // зеленая точка в переключателе
+      content: "";
+      position: absolute;
+      left: 16px;
+      top: -2px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: @color-main;
+      transition: 0.5s;
+    }
+
+    .btn-switch__radio2:checked ~ .btn-switch__label::before {
+      left: 390px;
+    }
+
+    .btn-switch__radio2:checked ~ .btn-switch__label::after {
+      left: 403px;
+    }
+
+    .btn-switch__radio3:checked ~ .btn-switch__label::before {
+      left: 200px;
+    }
+
+    .btn-switch__radio3:checked ~ .btn-switch__label::after {
+      left: 212px;
+    }
+
+    .btn-switch__radio3:checked ~ .btn-switch__picture > .btn-switch__before,  //среднее положение checked
+    .btn-switch__radio3:checked ~ .btn-switch__picture > .btn-switch__after {
+      position: relative;
+      display: block;
+    }
+
+    .btn-switch__img--before {
+      position: absolute;
+      opacity: 1;
+      clip: rect(auto 365px auto auto);
+    }
+
+    .btn-switch__img--after {
+      position: absolute;
+      opacity: 1;
+      clip: rect(auto auto auto 365px);
+    }
+
+    .btn-switch__radio3:checked ~ .btn-switch__picture > .btn-switch__before {
+      opacity: 1;
+    }
+
+    .btn-switch__radio3:checked ~ .btn-switch__picture > .btn-switch__after {
+      opacity: 1;
+    }
+
+    .btn-switch__discription {
+      padding-top: 20px;
+      padding-bottom: 70px;
+    }
+
+    .btn-switch__txt {
+      font-size: 20px;
+      line-height: 20px;
+      padding: 0 70px;
+    }
+  }
+}
+
+@media (min-width: @desktop-width) {
+  .btn-switch {
+    position: relative;
+
+    .btn-switch__picture {
+      position: relative;
+      width: 690px;
+      height: 517px;
+      margin-top: -15px;
+      margin-left: 0;
+    }
+
+    .btn-switch__label {        //серая полоса прокрутки
+      left: 150px;
+      top: 565px;
+      width: 430px;
+      height: 6px;
+      border-radius: 5px;
+      background-color: #cfcfcf;
+    }
+
+    .btn-switch__discription {
+      width: 570px;
+      padding-top: 38px;
+      padding-bottom: 70px;
+      margin-left: 80px;
+    }
+
+    .btn-switch__txt {
+      font-size: 20px;
+      line-height: 20px;
+      border-bottom: 1px dashed @color-grey-line;
+      padding: 0 0 5px 0;
+      margin: 0;
+    }
+  }
+}

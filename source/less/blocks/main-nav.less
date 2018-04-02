@@ -1,0 +1,109 @@
+.main-nav {
+  position: relative;
+  color: @text-color;
+  font-family: @font-family;
+  font-size: 20px;
+  line-height: 20px;
+  text-transform: uppercase;
+  width: 320px;
+  margin-left: -20px;
+
+
+  .main-nav__toggle {     //белая кнопка переключатель
+    position: absolute;
+    top: -65px;
+    right: 0;
+    z-index: 2;
+    display: block;
+    width: 70px;
+    height: 65px;
+    background-color: #ffffff;
+    cursor: pointer;
+    border: none;
+
+    &:hover,
+    &:active {
+      background-color: rgba(253, 253, 253, 0.8);
+    }
+  }
+
+  &.main-nav--closed {     //кнопка-меню - "гамбургер"
+    .main-nav__toggle {
+      &::before {
+        content: "";
+        position: absolute;
+        top: 23px;
+        left: 25px;
+        width: 25px;
+        height: 2px;
+        background-color: #000000;
+        box-shadow: 0 8px 0 0 #000000, 0 16px 0 0 #000000;
+      }
+    }
+  }
+
+  &.main-nav--closed .main-nav__toggle:active::before {
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+
+  &.main-nav--opened {  //кнопка-меню - крестик
+    .main-nav__toggle {
+      top: -65px;
+      right: 0;
+
+      &::before,
+      &::after {
+        content: "";
+        position: absolute;
+        top: 30px;
+        left: 25px;
+        width: 25px;
+        height: 2px;
+        background-color: #000000;
+      }
+
+      &::before {
+        transform: rotate(45deg);
+        box-shadow: none;
+      }
+
+      &::after {
+        transform: rotate(-45deg);
+      }
+
+      &:active::before,
+      &:active::after {
+        background-color: rgba(0, 0, 0, 0.5);
+      }
+    }
+  }
+
+  .main-nav__list {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+@media (max-width: @mobile-width-only) {
+  .main-nav--closed .site-list {
+    display: none;
+  }
+
+  .main-nav--closed:active .site-list {
+    display: block;
+  }
+
+  .main-nav--opened .site-list {
+    display: block;
+  }
+
+  // .main-nav--nojs .main-nav__toggle {
+  //   display: none;
+  // }
+}
+
+@media (min-width: @tablet-width) {
+  .main-nav {
+    width: 440px;
+  }
+}
