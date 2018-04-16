@@ -37,6 +37,10 @@
   }
 }
 
+* {
+  box-sizing: border-box;
+}
+
 body, figure {
   margin: 0;
   //background: #101010;
@@ -49,26 +53,26 @@ body, figure {
   overflow: hidden;
 }
 
-figure .first-screen__slider {
+.first-screen__slider {
   position: relative;
   width: 500%;
   font-size: 0;
-  animation: 30s slidy infinite;
+  animation: 100s slidy infinite;
 }
 
-figure .first-screen__slider figure {
+.slider-in {
   width: 20%;
   height: auto;
   display: inline-block;
   position: inherit;
 }
 
-figure .first-screen__slider img {
+.slider-in img {
   width: 100%;
   height: auto;
 }
 
-figure .first-screen__slider figure figcaption {
+.slider-in figcaption {
   position: absolute;
   bottom: 0;
   background: rgba(0, 0, 0, 0.4);
